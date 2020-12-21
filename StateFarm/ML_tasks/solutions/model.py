@@ -6,6 +6,7 @@ from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
+from StateFarm.ML_tasks.solutions.utils import read_json
 import statsmodels.api as sm
 import pickle
 from sklearn.model_selection import train_test_split
@@ -26,21 +27,23 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 train_data_dir = os.path.join(basedir, 'data', 'exercise_26_train.csv')
 test_data_dir = os.path.join(basedir, 'data', 'exercise_26_test.csv')
 models_dir = os.path.join(basedir, 'models')
+json_schema_dir = basedir + '/test/schema.json'
 
 # CATEGORICAL_FEATURES = {'y':[0 , 1],
 #                         'x5': ['tuesday' 'saturday' 'thursday' 'sunday' 'wednesday' 'monday' 'friday'],
 #                         'x31': ['germany' 'asia' 'america' 'japan', 'nan'],
 #                         'x81': [], 'x82'}
 CATEGORICAL_FEATURES = ['x5', 'x31', 'x81', 'x82']
+schema = read_json(json_schema_dir)
 
 TOTAL_FEATURES = 25
 
-HIGH_RANKING_FEATURES = []
+TOP_RANKING_FEATURES = []
 
-HIGH_RANKING_FEATURES = ['x5_saturday', 'x81_July', 'x81_December', 'x31_japan', 'x81_October', 'x5_sunday', 'x31_asia',
-                         'x81_February', 'x91', 'x81_May', 'x5_monday', 'x81_September', 'x81_March', 'x53', 'x81_November',
-                         'x44', 'x81_June', 'x12', 'x5_tuesday', 'x81_August', 'x81_January', 'x62', 'x31_germany',
-                         'x58', 'x56']
+# HIGH_RANKING_FEATURES = ['x5_saturday', 'x81_July', 'x81_December', 'x31_japan', 'x81_October', 'x5_sunday', 'x31_asia',
+#                          'x81_February', 'x91', 'x81_May', 'x5_monday', 'x81_September', 'x81_March', 'x53', 'x81_November',
+#                          'x44', 'x81_June', 'x12', 'x5_tuesday', 'x81_August', 'x81_January', 'x62', 'x31_germany',
+#                          'x58', 'x56']
 DUMMY_CATEGORIES = {}
 
 # Load dataset
@@ -48,30 +51,33 @@ DUMMY_CATEGORIES = {}
 
 
 def build_and_train():
+    global TOP_RANKING_FEATURES
     # Load CSV files
     raw_data = pd.read_csv(train_data_dir)
     # Normalize the data
     df_processed = pre_processing(raw_data, train=True)
     print(df_processed)
+    TOP_RANKING_FEATURES = get_important_features(df_processed)
     # Create Logistic Regression model
-    logit = sm.Logit(df_processed['y'], df_processed[HIGH_RANKING_FEATURES])
+    logit = sm.Logit(df_processed['y'], df_processed[TOP_RANKING_FEATURES])
     # Fit the model
     result = logit.fit()
-    result.summary()
+    # result.summary()
     print(get_important_features(df_processed))
 
-    # print(DUMMY_CATEGORIES)
-    # pickle.dump(result, open(models_dir + '/logit.pkl', 'wb'))
-    # model = pickle.load(open(models_dir + '/logit.pkl', 'rb'))
-    # raw_data = pd.read_csv(test_data_dir)
-    # raw_data = raw_data.iloc[:2]
+    print(DUMMY_CATEGORIES)
+    pickle.dump(result, open(models_dir + '/logit.pkl', 'wb'))
+    model = pickle.load(open(models_dir + '/logit.pkl', 'rb'))
+    raw_data = pd.read_csv(test_data_dir)
+    raw_data = raw_data.iloc[:3]
+    print(raw_data.to_json(orient='table'))
     # print(raw_data[CATEGORICAL_FEATURES])
     # df_processed = pre_processing(raw_data)
     # # print(df_processed.filter(regex='x82_'))
     # # print(*df_processed.columns)
     # # print(CATEGORICAL_FEATURES)
-    # print(df_processed[HIGH_RANKING_FEATURES])
-    # print(model.predict(df_processed[HIGH_RANKING_FEATURES]))
+    # print(df_processed[TOP_RANKING_FEATURES])
+    # print(model.predict(df_processed[TOP_RANKING_FEATURES]))
 
 
 def get_important_features(df):
@@ -82,7 +88,6 @@ def get_important_features(df):
     exploratory_results['coefs_squared'] = exploratory_results['coefs'] ** 2
     var_reduced = exploratory_results.nlargest(25, 'coefs_squared')
     return var_reduced['name'].to_list()
-
 
 
 def pre_processing(df, train=False):
@@ -115,7 +120,6 @@ def pre_processing(df, train=False):
         drop_features = CATEGORICAL_FEATURES
     print(drop_features)
 
-
     # 2. Replace NaN with mean and normalize the data
     imputer = SimpleImputer(missing_values=np.nan, strategy='mean')
     df_imputed = pd.DataFrame(imputer.fit_transform(df_processed.drop(columns=drop_features)),
@@ -137,10 +141,13 @@ def pre_processing(df, train=False):
         df_imputed_std = pd.concat([df_imputed_std, dump], axis=1, sort=False)
     print(DUMMY_CATEGORIES)
 
-    # Add y feature back to dataframe when training the model
+    # Add y feature back to DataFrame when training the model
     if train:
         df_imputed_std = pd.concat([df_imputed_std, df_processed.y], axis=1, sort=False)
 
     return df_imputed_std
 
 build_and_train()
+
+
+

@@ -1,0 +1,413 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "array",
+  "items": [
+    {
+      "type": "object",
+      "properties": {
+        "x0": {
+          "type": "number"
+        },
+        "x1": {
+          "type": "number"
+        },
+        "x2": {
+          "type": "number"
+        },
+        "x3": {
+          "type": "number"
+        },
+        "x4": {
+          "type": "number"
+        },
+        "x5": {
+          "type": "string"
+        },
+        "x6": {
+          "type": "number"
+        },
+        "x7": {
+          "type": "number"
+        },
+        "x8": {
+          "type": "number"
+        },
+        "x9": {
+          "type": "number"
+        },
+        "x10": {
+          "type": "number"
+        },
+        "x11": {
+          "type": "number"
+        },
+        "x12": {
+          "type": "string"
+        },
+        "x13": {
+          "type": "number"
+        },
+        "x14": {
+          "type": "number"
+        },
+        "x15": {
+          "type": "number"
+        },
+        "x16": {
+          "type": "number"
+        },
+        "x17": {
+          "type": "number"
+        },
+        "x18": {
+          "type": "number"
+        },
+        "x19": {
+          "type": "number"
+        },
+        "x20": {
+          "type": "number"
+        },
+        "x21": {
+          "type": "number"
+        },
+        "x22": {
+          "type": "number"
+        },
+        "x23": {
+          "type": "number"
+        },
+        "x24": {
+          "type": "number"
+        },
+        "x25": {
+          "type": "number"
+        },
+        "x26": {
+          "type": "number"
+        },
+        "x27": {
+          "type": "number"
+        },
+        "x28": {
+          "type": "number"
+        },
+        "x29": {
+          "type": "number"
+        },
+        "x30": {
+          "type": "number"
+        },
+        "x31": {
+          "type": "string"
+        },
+        "x32": {
+          "type": "number"
+        },
+        "x33": {
+          "type": "number"
+        },
+        "x34": {
+          "type": "number"
+        },
+        "x35": {
+          "type": "number"
+        },
+        "x36": {
+          "type": "number"
+        },
+        "x37": {
+          "type": "number"
+        },
+        "x38": {
+          "type": "number"
+        },
+        "x39": {
+          "type": "number"
+        },
+        "x40": {
+          "type": "number"
+        },
+        "x41": {
+          "type": "number"
+        },
+        "x42": {
+          "type": "number"
+        },
+        "x43": {
+          "type": "number"
+        },
+        "x44": {
+          "type": "number"
+        },
+        "x45": {
+          "type": "number"
+        },
+        "x46": {
+          "type": "number"
+        },
+        "x47": {
+          "type": "number"
+        },
+        "x48": {
+          "type": "number"
+        },
+        "x49": {
+          "type": "number"
+        },
+        "x50": {
+          "type": "number"
+        },
+        "x51": {
+          "type": "number"
+        },
+        "x52": {
+          "type": "number"
+        },
+        "x53": {
+          "type": "number"
+        },
+        "x54": {
+          "type": "number"
+        },
+        "x55": {
+          "type": "number"
+        },
+        "x56": {
+          "type": "number"
+        },
+        "x57": {
+          "type": "number"
+        },
+        "x58": {
+          "type": "number"
+        },
+        "x59": {
+          "type": "number"
+        },
+        "x60": {
+          "type": "number"
+        },
+        "x61": {
+          "type": "number"
+        },
+        "x62": {
+          "type": "number"
+        },
+        "x63": {
+          "type": "string"
+        },
+        "x64": {
+          "type": "number"
+        },
+        "x65": {
+          "type": "number"
+        },
+        "x66": {
+          "type": "number"
+        },
+        "x67": {
+          "type": "number"
+        },
+        "x68": {
+          "type": "number"
+        },
+        "x69": {
+          "type": "number"
+        },
+        "x70": {
+          "type": "number"
+        },
+        "x71": {
+          "type": "number"
+        },
+        "x72": {
+          "type": "number"
+        },
+        "x73": {
+          "type": "number"
+        },
+        "x74": {
+          "type": "number"
+        },
+        "x75": {
+          "type": "number"
+        },
+        "x76": {
+          "type": "number"
+        },
+        "x77": {
+          "type": "number"
+        },
+        "x78": {
+          "type": "number"
+        },
+        "x79": {
+          "type": "number"
+        },
+        "x80": {
+          "type": "null"
+        },
+        "x81": {
+          "type": "string"
+        },
+        "x82": {
+          "type": "string"
+        },
+        "x83": {
+          "type": "number"
+        },
+        "x84": {
+          "type": "number"
+        },
+        "x85": {
+          "type": "number"
+        },
+        "x86": {
+          "type": "number"
+        },
+        "x87": {
+          "type": "number"
+        },
+        "x88": {
+          "type": "number"
+        },
+        "x89": {
+          "type": "number"
+        },
+        "x90": {
+          "type": "number"
+        },
+        "x91": {
+          "type": "number"
+        },
+        "x92": {
+          "type": "number"
+        },
+        "x93": {
+          "type": "number"
+        },
+        "x94": {
+          "type": "number"
+        },
+        "x95": {
+          "type": "number"
+        },
+        "x96": {
+          "type": "number"
+        },
+        "x97": {
+          "type": "number"
+        },
+        "x98": {
+          "type": "number"
+        },
+        "x99": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "x0",
+        "x1",
+        "x2",
+        "x3",
+        "x4",
+        "x5",
+        "x6",
+        "x7",
+        "x8",
+        "x9",
+        "x10",
+        "x11",
+        "x12",
+        "x13",
+        "x14",
+        "x15",
+        "x16",
+        "x17",
+        "x18",
+        "x19",
+        "x20",
+        "x21",
+        "x22",
+        "x23",
+        "x24",
+        "x25",
+        "x26",
+        "x27",
+        "x28",
+        "x29",
+        "x30",
+        "x31",
+        "x32",
+        "x33",
+        "x34",
+        "x35",
+        "x36",
+        "x37",
+        "x38",
+        "x39",
+        "x40",
+        "x41",
+        "x42",
+        "x43",
+        "x44",
+        "x45",
+        "x46",
+        "x47",
+        "x48",
+        "x49",
+        "x50",
+        "x51",
+        "x52",
+        "x53",
+        "x54",
+        "x55",
+        "x56",
+        "x57",
+        "x58",
+        "x59",
+        "x60",
+        "x61",
+        "x62",
+        "x63",
+        "x64",
+        "x65",
+        "x66",
+        "x67",
+        "x68",
+        "x69",
+        "x70",
+        "x71",
+        "x72",
+        "x73",
+        "x74",
+        "x75",
+        "x76",
+        "x77",
+        "x78",
+        "x79",
+        "x80",
+        "x81",
+        "x82",
+        "x83",
+        "x84",
+        "x85",
+        "x86",
+        "x87",
+        "x88",
+        "x89",
+        "x90",
+        "x91",
+        "x92",
+        "x93",
+        "x94",
+        "x95",
+        "x96",
+        "x97",
+        "x98",
+        "x99"
+      ]
+    }
+  ]
+}
