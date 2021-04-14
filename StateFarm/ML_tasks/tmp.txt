@@ -1,0 +1,8 @@
+https://github.com/Davisy/Model-Deployment-by-using-Flask/blob/master/server.py
+https://github.com/pratos/flask_api
+https://github.com/dpgaspar/Flask-AppBuilder
+https://github.com/lopezco/ml-flask-api
+https://github.com/Fischerfredl/flask-expects-json/blob/master/tests/test_schema.py
+https://gist.github.com/ibeex/3257877
+https://github.com/DSNortsev/Awesome-Machine-learning-Deep-learning-Deployment
+https://github.com/Fischerfredl/flask-expects-json/blob/master/tests/test_requests.py
